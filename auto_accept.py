@@ -10,6 +10,8 @@ acceptedButtonImg = './sample-accepted.png'
 championSelectionImg_flash = './flash-icon.png'
 championSelectionImg_emote = './emote-icon.png'
 playButtonImg = './play-button.png'
+#Insert
+loadImg = './load-screen.png'
 
 def checkGameAvailableLoop():
     while True:
@@ -40,6 +42,15 @@ def checkGameCancelled():
     else:
         return False
 
+#Insert
+def checkGameStarted():
+    load = imagesearch(loadImg)
+    if not load[0] == -1:
+        return True
+    else:
+        return False
+
+
 
 def main():
     run = True
@@ -56,9 +67,16 @@ def main():
             
             csResult = checkChampionSelection()
             if csResult is True:
-                print("Champion selection! Good Luck :D")
+                #print("Champion selection! Good Luck :D")
+                print("Champion selection. Searching for loadscreen.")
                 time.sleep(TIMELAPSE)
-                run = False
+                #run = False
+                while True:
+                    started = checkGameStarted()
+                    if started is True:
+                        print("Got to loadscreen. Exiting.")
+                        run = False
+                        break
                 break
 
             time.sleep(TIMELAPSE)

@@ -68,16 +68,28 @@ def main():
             csResult = checkChampionSelection()
             if csResult is True:
                 #print("Champion selection! Good Luck :D")
-                print("Champion selection. Searching for loadscreen.")
-                time.sleep(TIMELAPSE)
-                #run = False
-                while True:
-                    started = checkGameStarted()
-                    if started is True:
-                        print("Got to loadscreen. Exiting.")
-                        run = False
-                        break
+                print("Champion selection. Resetting.")
                 break
+                #time.sleep(TIMELAPSE)
+                #run = False
+
+                #Need to either see loadscreen or playbutton
+                # while True:
+                #     started = checkGameStarted()
+                #     if started is True:
+                #         print("Got to loadscreen. Exiting.")
+                #         run = False
+                #         break
+                #     else:
+                #         cancelled2 = checkGameCancelled()
+                #         if cancelled2 is True:
+                #             #pyautogui.click(pos[0], pos[1])
+                #             print("Game has been cancelled, waiting...")
+                #             #Keeping run = True
+                #             break
+
+                #     time.sleep(TIMELAPSE)
+                # break
 
             time.sleep(TIMELAPSE)
         
